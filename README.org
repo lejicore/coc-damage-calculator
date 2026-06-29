@@ -43,13 +43,13 @@ This package needs the [[https://github.com/abo-abo/hydra][hydra]] package to wo
 ** Using Straight fetching directly from the repo.
 #+begin_src emacs-lisp
 (use-package hydra
-  :straight t
-  :defer t)
+    :straight t
+    :defer t)
 
 (use-package coc-dc
-  :straight '(coc-dc :host github
-                                    :repo "S0mbr3/coc-damage-calculator")
-  :init
-  (require 'hydra)
-  :bind (("C-c c" . coc-dc-menu)))
+    :straight '(coc-dc :host github
+                   :repo "lejicore/coc-damage-calculator")
+    :init
+    (require 'hydra)
+    :bind (("C-c c" . coc-dc-menu)))
 #+end_src
