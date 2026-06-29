@@ -227,6 +227,26 @@ nEnter the hp of the building: ")
   (print (format "The building has %d hp left"
 		 (- hp (coc-dc--spiky-ball-level-picker level)))))
 
+(defun coc-dc--rocket-backpack-level-picker (level)
+  "Pick the good damage for the rocket backpack LEVEL."
+  (let ((levels '(575 575 750 750 750 950 950 950 1125
+		       1125 1125 1325 1325 1325 1500 1500 1500
+		       1700 1700 1700 1875 1875 1875 2050 2050
+		       2050 2150)))
+    (elt levels (1- level))))
+
+
+(defun coc-dc-rocket-backpack-hp-building-left (level hp)
+  "Calculate the remaining buld hp after rocket backpack attack.
+
+LEVEL is the level of the rocket backpack.
+HP is the bulding hp targeted."
+  (interactive "nEnter the level of the rocket backpack: \n\
+nEnter the hp of the building: ")
+  (print (format "The building has %d hp left"
+		 (- hp (coc-dc--rocket-backpack-level-picker level)))))
+
+
 (defun coc-dc-custom-hp-building-left (input-string)
   "Calculate the hp left of a building after a custom setup.
 
@@ -308,6 +328,7 @@ EG:'eelfa' will apply:
   _j_: ^^^^Giant arrow   _k_: ^^^^Lightning   _d_: ^^^^Fireball Earthquake Giant arrow
   _s_: ^^^^Rocket spear                 _c_: ^^^^Fireball And Giant arrow
   _l_: ^^^^Spiky ball                  _f_: ^^^^Custom setup
+  _r_: ^^^^Rocket backpack
   "
 	     ;; Equipements
 	     ("h" coc-dc-fireball-hp-building-left
@@ -321,6 +342,10 @@ EG:'eelfa' will apply:
 
 	     ("l" coc-dc-spiky-ball-hp-building-left
 	      :face coc-dc-hydra-command-face)
+
+             ("r" coc-dc-rocket-backpack-hp-building-left
+	      :face coc-dc-hydra-command-face)
+
 
 	     ;; Spells
 	     ("b" coc-dc-earthquake-hp-building-left
