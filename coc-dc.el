@@ -193,8 +193,8 @@ nEnter the hp of the building: ")
   "Pick the damage for the giant arrow.
 
 LEVEL is the level of the giant arrow."
-  (let ((levels '(750 750 850 850 850 1000 1000 1000 1200 1200
-		      1200 1500 1500 1500 1750 1750 1750 1950)))
+  (let ((levels '(750 750 850 850 850 1000 1000 1000 1100 1100
+		      1100 1200 1200 1200 1350 1350 1350 1500)))
     (elt levels (1- level))))
 
 (defun coc-dc-giant-arrow-hp-building-left (level hp)
