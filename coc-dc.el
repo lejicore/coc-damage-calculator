@@ -247,6 +247,29 @@ nEnter the hp of the building: ")
 		 (- hp (coc-dc--rocket-backpack-level-picker level)))))
 
 
+(defun coc-dc-rocket-backpack-earthquake-arrow-calculator
+    (rocket-backpack-level earthquake-level earthquake-number arrow-level hp)
+  "Calculate the remaining HP of a building after the following setup:
+-rocket backpack, giant arrow and earthquake.
+
+ROCKET-BACKPACK-LEVEL is the level of the rocket backpack.
+ARROW-LEVEL is the level of giant arrow.
+EARTHQUAKE-LEVEL is the level of the earthquake.
+EARTHQUAKE-NUMBER is the level of the earthquake.
+HP is the initial hit points of the building."
+  (interactive "nEnter the level of the rocket backpack: \n\
+nEnter the level of the earthquake: \n\
+nEnter the number of earthquakes: \n\
+nEnter the level of the giant arrow: \n\
+nEnter the hp of the building: ")
+  (print (format "The building has %d hp left"
+		 (- hp (coc-dc--rocket-backpack-level-picker
+			rocket-backpack-level)
+		    (coc-dc--earthquake-damage-calculator
+		     earthquake-level earthquake-number hp)
+		    (coc-dc--giant-arrow-level-picker
+		     arrow-level)))))
+
 (defun coc-dc-custom-hp-building-left (input-string)
   "Calculate the hp left of a building after a custom setup.
 
@@ -328,7 +351,7 @@ EG:'eelfa' will apply:
   _j_: ^^^^Giant arrow   _k_: ^^^^Lightning   _d_: ^^^^Fireball Earthquake Giant arrow
   _s_: ^^^^Rocket spear                 _c_: ^^^^Fireball And Giant arrow
   _l_: ^^^^Spiky ball                  _f_: ^^^^Custom setup
-  _r_: ^^^^Rocket backpack
+  _r_: ^^^^Rocket backpack              _x_: ^^^^Rocket backpack Earthquake Giant arrow
   "
 	     ;; Equipements
 	     ("h" coc-dc-fireball-hp-building-left
@@ -365,6 +388,9 @@ EG:'eelfa' will apply:
 	      :face coc-dc-hydra-command-face)
 
 	     ("f" coc-dc-custom-hp-building-left
+	      :face coc-dc-hydra-command-face)
+
+	     ("x" coc-dc-rocket-backpack-earthquake-arrow-calculator
 	      :face coc-dc-hydra-command-face)
 
 	     ;; Quit
