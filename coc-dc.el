@@ -160,7 +160,7 @@ nEnter the hp of the building: ")
   "Pick the percentage for the lightning spell.
 
 LEVEL is the level of the lightning spell."
-  (let ((levels '(150 180 210 240 270 320 400 480 560 600 640)))
+  (let ((levels '(150 180 210 240 270 320 400 480 560 600 640 680 720)))
     (elt levels (1- level))))
 
 (defun coc-dc--lightning-damage-calculator (level number)
