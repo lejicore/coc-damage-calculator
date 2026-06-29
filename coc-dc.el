@@ -355,7 +355,7 @@ EG:'eelfa' will apply:
   _h_: ^^^^Fireball      _b_: ^^^^Earthquake  _w_: ^^^^Fireball and Earthquake
   _j_: ^^^^Giant arrow   _k_: ^^^^Lightning   _d_: ^^^^Fireball Earthquake Giant arrow
   _s_: ^^^^Rocket spear                 _c_: ^^^^Fireball And Giant arrow
-  _l_: ^^^^Spiky ball                  _f_: ^^^^Custom setup
+  _l_: ^^^^Spiky ball                   _f_: ^^^^Custom setup
   _r_: ^^^^Rocket backpack              _x_: ^^^^Rocket backpack Earthquake Giant arrow
   "
 	     ;; Equipements
