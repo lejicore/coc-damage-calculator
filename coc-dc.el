@@ -33,7 +33,7 @@
   "Pick the percentage for the earthquakes.
 
 LEVEL is the level of the earthquakes."
-  (let ((levels '(14.5 17 21 25 29)))
+  (let ((levels '(14.5 17 21 25 29 29 29 29)))
     (elt levels (1- level))))
 
 (defun coc-dc--earthquake-damage-calculator (level number hp)
