@@ -283,6 +283,7 @@ f: fireball
 a: giant arrow
 s: rocket spear
 b: spiky ball
+r: rocket backpack
 
 EG:'eelfa' will apply:
 - 2 sets of earthquakes one lightning set a fireball and a giant arrow."
@@ -309,6 +310,10 @@ EG:'eelfa' will apply:
 	  (setq damage
 		(+ damage (coc-dc--spiky-ball-level-picker
 			   (read-number "Level of the spiky ball: ")))))
+         ((eq char ?r)
+	  (setq damage
+		(+ damage (coc-dc--rocket-backpack-level-picker
+			   (read-number "Level of the rocket backpack: ")))))
          ((eq char ?e)
 	  (setq damage
 		(+ damage (coc-dc--earthquake-damage-calculator
