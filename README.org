@@ -23,6 +23,7 @@ To use correctly the ~Custom setup~ option you have to provide the setup order.
 - *a*: giant arrow
 - *s*: rocket spear
 - *b*: spicky ball
+- *r*: rocket backpack
 
 * Installation
 This package needs the [[https://github.com/abo-abo/hydra][hydra]] package to work.
